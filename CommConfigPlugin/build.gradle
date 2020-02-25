@@ -1,0 +1,35 @@
+apply plugin: 'java-library'
+apply plugin: 'groovy'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation gradleApi()
+    implementation localGroovy()
+
+    implementation 'com.android.tools.build:transform-api:1.5.0'
+    implementation 'com.android.tools.build:gradle:3.4.0'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+
+apply plugin: 'maven'
+//通过maven将插件发布到本地的脚本配置，根据自己的要求来修改
+uploadArchives {
+    configuration = configurations.archives
+    repositories.mavenDeployer {
+        /*本地仓库地址，注意：在编译此项目的时候，你要换成你自己的地址或按照这个地址在你的电脑上创建对应的文件夹*/
+        repository(url: uri('file:\\G:\\MyLocalMaven\\repository'))  /*仓库地址*/
+
+        pom.project {
+            name 'configplugin-library'    /*项目的名称*/
+            description 'gradle插件'     /*描述*/
+            groupId "com.lxr.maven"  /*项目的仓库路径*/
+            artifactId "configplugin" //项目名称
+            version '1.1.1' //版本号
+        }
+
+    }
+}
