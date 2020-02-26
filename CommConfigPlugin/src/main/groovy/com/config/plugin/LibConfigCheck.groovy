@@ -5,7 +5,7 @@ import org.gradle.api.artifacts.Configuration
 import org.gradle.api.artifacts.ConfigurationContainer
 import org.gradle.api.artifacts.ResolutionStrategy
 
-class LibVersionUtil {
+class LibConfigCheck {
 
     static def SUPPORT_VERSION = "28.0.0"
     static def MULTIDEX_VERSION = "1.0.2"

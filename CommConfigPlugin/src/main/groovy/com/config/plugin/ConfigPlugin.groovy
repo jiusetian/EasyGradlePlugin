@@ -14,13 +14,13 @@ class ConfigPlugin implements Plugin<Project> {
         println("执行插件configplugin")
 
         //统一第三方依赖库的版本号，常见的有 com.android.support 包等
-        LibVersionUtil.checkLibVersion(project)
+        LibConfigCheck.checkLibVersion(project)
 
         //检查Android编译配置
-        CompileConfigUtil.checkCompileConfig(project)
+        CompileConfigCheck.checkCompileConfig(project)
 
         //混淆检测
-        ProguardCheckUtil.checkProFile(project)
+        ProguardConfigCheck.checkProFile(project)
 
     }
 

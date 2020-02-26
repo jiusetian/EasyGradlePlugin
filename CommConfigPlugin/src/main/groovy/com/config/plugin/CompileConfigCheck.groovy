@@ -4,7 +4,7 @@ import com.android.build.gradle.BaseExtension
 import org.gradle.api.GradleException
 import org.gradle.api.Project
 
-class CompileConfigUtil {
+class CompileConfigCheck {
 
     static def MIN_SDK = 19
     static def TARGET_SDK = 28

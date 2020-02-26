@@ -10,7 +10,7 @@ import org.gradle.api.Task
 /**
  * 混淆规则检测
  */
-class ProguardCheckUtil {
+class ProguardConfigCheck {
 
     /**
      * 检测混淆文件是否符合规则
